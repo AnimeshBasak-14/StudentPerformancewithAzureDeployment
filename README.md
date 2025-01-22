@@ -44,7 +44,7 @@ This project is deployed on Azure. The deployment leverages Azure Container Regi
 
 ## Explore the Source Code
 
-You can find the source code and contribute to the project on our [GitHub repository](https://github.com/your-username/student-exam-performance-indicator).
+You can find the source code and contribute to the project on our [GitHub repository](https://github.com/AnimeshBasak-14/StudentPerformancewithAzureDeployment).
 
 ## How to Set Up Locally
 
