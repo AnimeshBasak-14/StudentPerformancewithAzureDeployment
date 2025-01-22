@@ -1,12 +1,12 @@
 # Student Exam Performance Indicator
 
-Welcome to the **Student Exam Performance Indicator** [web application](http://ec2-3-238-242-162.compute-1.amazonaws.com:8080/)! This system is designed to analyze and predict students' academic performance based on various input factors, primarily focusing on predicting a student's math score.
+Welcome to the **Student Exam Performance Indicator** web application! This system is designed to analyze and predict students' academic performance based on various input factors, primarily focusing on predicting a student's math score.
 
 ## Project Overview
 
 The Student Exam Performance Indicator utilizes machine learning techniques to predict students' math scores based on their personal and academic data. The system takes into account factors such as gender, parental education level, test preparation status, and scores in reading and writing.
 
-The project is deployed on an AWS EC2 instance, with containerized management using AWS Elastic Container Registry (ECR). The model was trained using the **Students Performance in Exams** dataset from Kaggle.
+The project is deployed on Azure, with containerized management using Azure Container Registry (ACR). The model was trained using the **Students Performance in Exams** dataset from Kaggle.
 
 ## Dataset Details
 
@@ -20,6 +20,7 @@ The dataset used in this project contains the following features for prediction:
 - **Reading Score**: The score obtained by the student in the reading test.
 - **Writing Score**: The score obtained by the student in the writing test.
 
+
 ## Key Features
 
 Our web application provides:
@@ -30,7 +31,7 @@ Our web application provides:
 
 ## Deployment Details
 
-This project is deployed on an AWS EC2 instance. The deployment leverages AWS Elastic Container Registry (ECR) for containerized management of the application.
+This project is deployed on Azure. The deployment leverages Azure Container Registry (ACR) for containerized management of the application.
 
 ### How It Works:
 - The machine learning model was trained using the above features, and predictions are made based on student input on the prediction page.
@@ -40,7 +41,6 @@ This project is deployed on an AWS EC2 instance. The deployment leverages AWS El
 
 - **Home**: Visit the home page to get an overview of the project.
 - **Prediction Page**: Head to the prediction page to enter student details and get predictions for the math score.
-- **About**: Learn more about the project and how it works.
 
 ## Explore the Source Code
 
@@ -52,7 +52,7 @@ You can find the source code and contribute to the project on our [GitHub reposi
 - Python 3.x
 - Flask
 - Docker (for containerized deployment)
-- AWS CLI (for managing EC2 instances and ECR)
+- Azure (for managing Azure resources)
 
 
 ## Installation Guide
@@ -83,6 +83,7 @@ You can find the source code and contribute to the project on our [GitHub reposi
 
 After creating the container, you will see Access keys.
 Save the login server, username, and password.
+
 4. Create Docker Image:
       ```bash
       docker build -t myregistername.azurecr.io/application_name:version .
