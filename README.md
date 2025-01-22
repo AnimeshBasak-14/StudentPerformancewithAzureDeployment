@@ -54,80 +54,54 @@ You can find the source code and contribute to the project on our [GitHub reposi
 - Docker (for containerized deployment)
 - AWS CLI (for managing EC2 instances and ECR)
 
-### Installation:
+
+## Installation Guide
+
+# Student Exam Performance Indicator
+
+## Installation
+
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/student-exam-performance-indicator.git
-   cd student-exam-performance-indicator
+   git clone https://github.com/AnimeshBasak-14/StudentPerformancewithAzureDeployment.git
+   cd StudentPerformancewithAzureDeployment
+
+
+   docker login myregistername.azurecr.io
+
+   use username and password to login
+
+   docker push myregistername.azurecr.io/application_name:version 
 
 2. Set up a virtual environment and install dependencies:
    ```bash
    python -m venv venv
    source venv/bin/activate  # On Windows, use venv\Scripts\activate
    pip install -r requirements.txt
-3. Set Up Amazon ECR (Elastic Container Registry)
 
-   To store your Docker images, you need to set up an ECR repository.
-   
-   Create an ECR Repository:
-   1. Open the [Amazon ECR Console](https://console.aws.amazon.com/ecr/).
-   2. Click on **Repositories** in the sidebar.
-   3. Click **Create repository**.
-   4. Choose a name for your repository (e.g., `simple-app`).
-   5. Select the appropriate settings (public or private).
-   6. Click **Create repository**.
+3. Set up MS Azure Container Registries:
 
-
-
-4. Set Up IAM User for AWS Access
-
-   To interact with AWS services such as ECR, you need to set up an IAM user with the necessary permissions.
-   
-   Create an IAM User:
-   1. Open the [IAM Console](https://console.aws.amazon.com/iam/).
-   2. Click on **Users** in the sidebar.
-   3. Click **Add user**.
-   4. Provide a username (e.g., `docker-user`).
-   5. Select **Programmatic access** (this gives access via the AWS CLI and API).
-   6. Click **Next: Permissions**.
-   
-   Assign Permissions:
-   1. Choose **Attach policies directly**.
-   2. Search for and select the following policies:
-      - `AmazonEC2ContainerRegistryFullAccess`
-      - `AmazonS3ReadOnlyAccess` (optional, if you need S3 access)
-   3. Click **Next: Tags**, then **Next: Review**, and finally **Create user**.
-   
-   #### Save Access Keys:
-   1. After creating the IAM user, you will see an **Access key ID** and **Secret access key**.
-   2. Save these credentials securely, as you will use them to configure your AWS CLI and authenticate with ECR.
-
-
-5. To set up Docker in your AWS EC2 instance:
-   Before installing Docker, it's a good idea to update your system packages.
+After creating the container, you will see Access keys.
+Save the login server, username, and password.
+4. Create Docker Image:
    ```bash
-   sudo apt-get update -y
-   sudo apt-get upgrade -y
-   curl -fsSL https://get.docker.com -o get-docker.sh
-   sudo sh get-docker.sh
-   sudo usermod -aG docker ubuntu
-   newgrp docker
-6. Configure EC2 as a Self-Hosted Runner for GitHub Actions:
-   To set up the EC2 instance as a self-hosted runner for GitHub Actions, follow these steps:
+   docker build -t myregistername.azurecr.io/application_name:version .
+   docker login myregistername.azurecr.io
+   Use the saved username and password to log in.
+
+5. Set up Web App in Azure: Complete the necessary setup. After completion, go to the deployment center and connect to your GitHub account. This will automatically create .github/workflows/main_myregistername.yml in your GitHub repository.
+
+6. Go to GitHub Actions: The build and deploy process will happen automatically. You can access your web app through the link provided in the default domain in the Web App resource.
+
+
+
+
+5. To set up Web App in Azure:
+   complete with nessary setup
+   after completion go to, deployement center. connect to github accoount
+    automatically .github/workflows/main_myregistername.yml will be created in github
    
-   Setup GitHub Secrets:
-   
-   You need to configure AWS credentials and the ECR login URI as GitHub secrets to interact with AWS services. These secrets should be set in your GitHub repository under Settings > Secrets and Variables > Actions.
-   
-   AWS_ACCESS_KEY_ID: Your AWS Access Key ID.
-   AWS_SECRET_ACCESS_KEY: Your AWS Secret Access Key.
-   AWS_REGION: Set this to your AWS region (e.g., us-east-1).
-   AWS_ECR_LOGIN_URI: This is the URI for your Amazon Elastic Container Registry (ECR).
+6. Go to GitHub Actions:
+Automatically the build and deploy will happen
+you can access your web app through link provided in default domain in Web App resource
 
-
-7. Run the Flask app in EC2:
-    ```bash
-
-   ./run.sh
-
-8. After running the app, visit the website using the public IPv4 address shared by your EC2 instance in your browser to interact with the application.
