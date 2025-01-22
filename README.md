@@ -46,7 +46,7 @@ This project is deployed on Azure. The deployment leverages Azure Container Regi
 
 You can find the source code and contribute to the project on our [GitHub repository](https://github.com/AnimeshBasak-14/StudentPerformancewithAzureDeployment).
 
-## How to Set Up Locally
+## How to Set Up 
 
 ### Prerequisites:
 - Python 3.x
