@@ -84,24 +84,13 @@ You can find the source code and contribute to the project on our [GitHub reposi
 After creating the container, you will see Access keys.
 Save the login server, username, and password.
 4. Create Docker Image:
-   ```bash
-   docker build -t myregistername.azurecr.io/application_name:version .
-   docker login myregistername.azurecr.io
-   Use the saved username and password to log in.
+      ```bash
+      docker build -t myregistername.azurecr.io/application_name:version .
+      docker login myregistername.azurecr.io
+      Use the saved username and password to log in.
 
 5. Set up Web App in Azure: Complete the necessary setup. After completion, go to the deployment center and connect to your GitHub account. This will automatically create .github/workflows/main_myregistername.yml in your GitHub repository.
 
 6. Go to GitHub Actions: The build and deploy process will happen automatically. You can access your web app through the link provided in the default domain in the Web App resource.
 
-
-
-
-5. To set up Web App in Azure:
-   complete with nessary setup
-   after completion go to, deployement center. connect to github accoount
-    automatically .github/workflows/main_myregistername.yml will be created in github
-   
-6. Go to GitHub Actions:
-Automatically the build and deploy will happen
-you can access your web app through link provided in default domain in Web App resource
 
